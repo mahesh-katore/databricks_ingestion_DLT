@@ -1,0 +1,14 @@
+resources:
+  pipelines:
+    data_ingestion_bronze:
+      name: Data_Ingestion_Bronze
+      libraries:
+        - glob:
+            include: ../src/data_ingestion_bronze/**
+      catalog: databricks_cata
+      channel: CURRENT
+      continuous: false
+      photon: true
+      root_path: ../src/data_ingestion_bronze
+      schema: dlt_ingestion
+      serverless: true
